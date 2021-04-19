@@ -1,0 +1,125 @@
+<head>
+<title>Games Development</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png?">
+
+</head>
+<div id = "name">
+<h1> Bethany Davis </h1>
+</div>
+<div id = "banner">
+<h1 id = "title"> Games Development</h1>
+</div>
+<body>
+
+<div id = "top">
+<h2> <a href = "home.html"> Home </a> ><a href = "home.html#course"> Coursework </a> > Games Development</h2>
+<a href = "#banner"> Back to top </a>
+<ul>
+	<li><h2><a href = "#what">What is it?</a></h2></li>
+	<li><h2><a href = "#why">Why I made it</a></h2></li>
+	<li><h2><a href = "#how">How it works</a></h2></li>
+	<li><h2><a href = "#aspects">Observations</a></h2></li>
+	<li><h2><a href = "#success">How successful has it been?</a></h2></li>
+	<li><h2><a href = "#diff">What would I do differently if I started over?</a></h2></li>
+	<li><h2><a href = "#usage">How I've been able to use it</a></h2></li>
+
+</ul>
+</div>
+<div id = "content">
+
+<ul>
+	<li><h2 id = "what" class="project_box_title">What is it?</h2></li>
+	<ul>
+		<li>Fight Knight was a short game I made for a module where we had to design and develop our own game individually in a short time frame. 
+		Having played a lot of the souls games at the time, I decided to try my hand at that style of combat, focusing on stopping animation cancelling, 
+		dodges with iframes, and large windups on attack animations. While I added a few twists myself, and some are reminiscent of Hyper Light Drifter, 
+		which I didn’t play until a few months after completing this project, the main differences to souls games in my approach were that it 
+		was in isometric perspective, and would only feature a single enemy.</li>
+		<dl>
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/KNntQx6ug78" title="YouTube video player" frameborder="0" allow="accelerometer; 
+		autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "fig" alt = "Video of FightKnight in normal mode"></iframe><figcaption>FightKnight in normal mode</figcaption>
+	</ul>
+	<li><h2 id = "why" class="project_box_title">Why I made it</h2></li>
+	<ul>
+		<li>I've loved souls games since a friend of mine put me onto them back in 2015, and outside of a few attempts, such as <a href="0xBot.html">0xBot</a>, 
+		and <a href = "astron.html">Astron</a>, I'd never made a full game on my own; much less a real time game using an actual game engine. So being 
+		given dedicated coursework time to make basically anything I wanted was a dream come true, and I decided I should try to make at least a 
+		tech demo for my ideal game at the time. One element I hadn't really worked on at all was animation. Being on a computer science degree,
+		there wasn't really any call for it as a part of the curriculum, and I hadn't really had much time to spend doing any in the past, so making
+		something that relied on animations with a strong understanding of timing was an exciting challenge.</li>
+	</ul>
+	<li><h2 id = "how" class="project_box_title">How it works</h2></li>
+	<ul>
+		<li>GDevelop is a very simple game engine which uses drag and drop code blocks. It's very limited, but the code blocks themselves are very intuitive,
+		and it's very quick to prototype with too. One specific aspect of the game I was quite pleased with, was how I handled combos and animation cancelling. 
+		For example, the player and enemy- functionally the same sprite set with a palette swap- have four attacks, two light, and two heavy, and they run in sequence.
+		I'd also decided that it made no sense, at least in my simulation to have a heavy-light combo, so you can chain any of the attacks together without a delay,
+		except for if you try to perform a light attack during a heavy attack, when it deliberately won't queue that input. Also, pleasingly, these animations 
+		can't be cancelled, unless you're hit out of an attack.</li>
+		<dl>
+		<li>To make things a little easier for myself as well- having spent a lot of time on custom animations- I was able to keep the enemy convincing without
+		having to properly implement pathfinding. The arena itself is just a square, so all I had to do was make the enemy able to go towards, or away from the player.
+		I then added some detail to the AI to change how it behaves as the game goes on. When the health bar is low, it hits harder, and is more likely to attack. 
+		Lastly, I wrote a short piece of background music with different layers, so the music would get more intense as the AI was closer to getting defeated.
+		</li>
+	</ul>
+	<li><h2 id = "aspects" class="project_box_title">Observations</h2></li>
+	<ul>
+		<li>Fight Knight was probably a harbinger of things to come in the game jam I participated in, <a href ="Tanks.html">Ludum Dare 53</a>.
+		For this assignment, I had a month or so split between other modules, and having never made a game by myself
+		to any real time constraint, I'd consider this a proto-jam for me. Looking back, it's easy to see that I spent way too long on assets, and 
+		in the second iteration- the second assignment for this project- my approach was to polish what I had, rather than add more. Having said all this,
+		for a first attempt in an unfamiliar engine, I poured a lot of my time and energy into it, including some of my own free time, and came out with 
+		a game. Perhaps a little anaemic, but showing the bones of some fun mechanics that have potential for further work.</li>
+	</ul>
+	<li><h2 id = "success" class="project_box_title">How successful has it been?</h2></li>
+	<ul>
+		<li>Overall, this project got a mark of 90%, with the main piece of feedback being that the second part of the submission- the polish phase for me- 
+		lacked any additional content. I think that's more than fair, and I'm happy with the mark I got. I also think the polish was needed, rather than additional
+		content in the immediate sense. While it's easy to look back and think I could have added a few more enemies, or a more interesting level, that 
+		overlooks the fact that there was no pathfinding in which I could make an AI fully able to navigate that more interesting level, and that in adding more 
+		enemies, I'd be exacerbating glaring issues with the first version of the combat system, which, while frustrating playing against a single AI, would
+		have caused issues against more.</li>
+		<dl>
+		<li>The other problem was that a lot of the "code" was baked into the level code as a single class, rather than as modules. This meant that extending
+		this under the time constraints would have been extremely difficult, and potentially risky. I'm also actually not entirely sure about whether or not 
+		this would have worked for multiple enemies. I never got round to testing it, but I'm suspicious this would have caused a lot of bugs I wouldn't have 
+		had time to fix.</li>
+	</ul>
+	<li><h2 id = "diff" class="project_box_title">What would I do differently if I started over?</h2></li>
+	<ul>
+		<li>Without any of the experience I've had since I worked on this project, the simplest change would be to sit down and plan. I threw myself into this 
+		project, and got to work animating very quickly without thinking too hard about implementation. Granted there wasn't much time, and I had a hard deadline,
+		but realistically, just having a feature plan, maybe implementing with shapes and pictures, rather than the full animations, and proceeding iteratively
+		would have sped things up a lot</li>
+		<dl>
+		<li>Additionally, while the best teacher is experience, spending more time figuring the engine out would have helped me a lot. There were significant 
+		issues with a lot of the built in components at the time, and I wasn't sure if those were because I was using them wrong, or because they weren't completed
+		yet.</li>
+		<dl>
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/MUDO7lghbxU" title="YouTube video player" 
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "fig", alt = "Video of FightKnight in comedy mode"></iframe>
+		<figcaption>FightKnight in comedy mode</figcaption>
+	</ul>
+	<li><h2 id = "usage" class="project_box_title">How I've been able to use it</h2></li>
+	<ul>
+		<li>This project was a real test of the tools I'd picked up on other modules. While I had most of the basic programming
+		knowledge and understanding to make basically anything I wanted if I put my mind to it, actually doing it was another matter, so having an opportunity to 
+		do it live, with a deadline and a mark was invaluable. Above all else, this project was a huge confidence booster.</li>		
+		<dl>
+		<li>Realistically, it was also a good learning space for animation and pixel art, not to mention the other artistic elements of video games. At this point,
+		I'd spent 3 years in university, and everything I'd learned was code and maths based, so taking an opportunity to look at how game development requires 
+		handling different forms of media to make a finished product was extremely useful as well as fun.</li>
+		<dl>
+		<li>Finally, while I didn't quite achieve what I wanted with this project, it showed me that outside of the basics, the quality 
+		of game mechanics come down to fine tuning and polish. Souls type combat is particularly well known for this, so the fact that I was able to 
+		improve between my first and second iterations gives me confidence that were I to come back after 3 years in industry, 
+		a third iteration would probably be echelons above the second.</li>
+		<dl>
+
+	</ul>
+
+</ul>
+</div>
+</body>

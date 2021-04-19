@@ -1,0 +1,159 @@
+*{
+	color: #101717;
+	font-family: Bahnschrift Light, Helvetica;
+}
+body{
+	background-color: #fafafa;
+}
+
+h1{
+	font-size: 50px;
+}
+h2{
+	font-size: 40px;
+}
+li h2{
+	font-size: 25px;
+}
+li{
+	font-size: 20px;
+}
+a{
+	font-weight: bold;
+	color: #3c5757;
+}
+a:link{
+	color: #3c5757;
+}
+a:visited{
+	color: #455152;
+}
+a:hover{
+	color: #cbf5f4;
+}
+a:active{
+	color: #b5e8e8;
+}
+/*profile pic*/
+#avi{
+	padding-top: 10px;
+	height: 200px;
+	width: 200px;
+}
+/*top banner*/
+#banner{
+	padding-top: 20px;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	background-color: #98d9d2;
+}
+
+/*Title*/
+#title{
+	font-size: 60px;	
+	margin: 0px;
+	padding: 0px;
+
+}
+#name{
+	position: absolute;
+	text-align: left;
+	font-size: 60px;	
+	left: 15px;
+	top: 3px;
+	padding: 0px;
+
+}
+/*Main content*/
+#content{
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+/*back top top button*/
+#top{
+	padding-left: 10px;
+	padding-top: 15px;
+	margin-top: 10px;
+	padding-bottom: 15px;
+	padding-right: 10px;
+	font-size: 30px;
+	left: 8;
+	position: fixed;
+	background-color: #98d9d2;
+	width: 18%;
+}
+
+#top h2, li, a{
+	font-size: 20px;
+}
+
+/*screenshots for demonstration*/
+.fig{
+	text-align: center;
+	padding: 5px;
+	background-color: #98d9d2;
+
+}
+
+figcaption{
+	width: 150px;
+	background-color: #98d9d2;
+	font-size: 15px;
+}
+
+/*image grid on maze page*/
+#imgGrid {
+	background-color: #98d9d2;
+	display:flex;
+}
+
+#imgGrid div {
+	padding-right: 30px;
+}
+
+
+*:target {
+	background-color: #98d9d2;
+}
+
+
+/*Additional code by Logan*/
+
+#website_container
+{
+	position: relative;
+}
+
+#content
+{
+	margin-left: 16px;
+}
+
+.project_container
+{
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.project_box
+{
+	width: 45%;
+	position: relative;
+	display: inline-block;
+	margin: 8px 0;
+    padding: 8px 16px;
+    vertical-align: top;
+}
+
+.project_box_title
+{
+	background-color: cbf5f4;
+}
+
+.project_box_title:target {
+	background-color: #98d9d2;
+
+}

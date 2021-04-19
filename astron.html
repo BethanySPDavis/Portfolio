@@ -1,0 +1,113 @@
+<head>
+<title>Bethany Davis Portfolio</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png?">
+
+</head>
+<div id = "name">
+<h1> Bethany Davis </h1>
+</div>
+<div id = "banner">
+<h1 id = "title">Astron</h1>
+</div>
+<body>
+<div id = "top">
+<h2>  <a href = "home.html"> Home </a> ><a href = "home.html#personal"> Personal Projects </a> > Astron</h2>
+
+<a href = "#banner"> Back to top </a>
+<ul>
+	<li><h2><a href = "#what">What is it?</a></h2></li>
+	<li><h2><a href = "#why">Why I made it</a></h2></li>
+	<li><h2><a href = "#how">How it works</a></h2></li>
+	<li><h2><a href = "#aspects">Observations</a></h2></li>
+	<li><h2><a href = "#success">How successful has it been?</a></h2></li>
+	<li><h2><a href = "#diff">What would I do differently if I started over?</a></h2></li>
+	<li><h2><a href = "#usage">How I've been able to use it</a></h2></li>
+</ul>
+</div>
+
+
+
+<div id = "content">
+
+
+<ul>
+	<li><h2 id = "what" class="project_box_title">What is it?</h2></li>
+	<ul>
+		<li>Astron was a project I made during my first year at university as part of an attempt to preserve a particularly rare family favourite board game. 
+		Unfortunately, we only had the one copy at the time, and due to moving parts, it’s quite fragile. As part of the project, I created an accurate version 
+		of the board digitally from photos I’d made of our copy, and followed the rules as best as I could. At this point in my degree, I was most familiar with 
+		Java, so built the game to render to the HTML canvas.</li>
+		<dl>
+		<iframe alt = "Video of a round of Astron, played digitally in real time" width="960" height="540" src="https://www.youtube.com/embed/FSmVWHuwYuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<figcaption>Round of Astron, played in real time. The gaps where console commands were entered were not sped up</figcaption>
+		<dl>
+		<img src = "./Astron/1.jpg" class = "fig" alt = "Photo of a copy of Astron with all pieces"><figcaption>A physical copy of Astron (in better condition than ours)</figcaption>
+	</ul>
+	<li><h2 id = "why" class="project_box_title">Why I made it</h2></li>
+	<ul>
+		<li>I’d been saying to family members for a while that I wanted to have a go at making a videogame, but had never actually done it. After I’d 
+		learned some of the required skills, I thought it’d be a good time to have a go. Not to mention, there weren’t any parts of the course that year 
+		(or for the one after) which would involve making anything like a game, so I decided it would be a good time to get a head start, even if 
+		I never came back to the project, or used any of the techniques I learned while making it.</li>
+	</ul>
+	<li><h2 id = "how" class="project_box_title">How it works</h2></li>
+	<ul>
+		<li>Using the HTML canvas, I would display a grid of images, which moved on each turn. I created a finite deck 
+		of cards from a hard coded array, which allowed a level of realism in the card shuffling. The ships were then drawn directly on top of the board to 
+		display their relevant positions. I also wanted to create automatic scoring, an automatic game loop which allowed players to play their cards, rather 
+		than entering movements, and implement features such as forcing a ship which is 1 space behind another to be pushed a space backwards as denoted by 
+		the rules.</li>
+		<dl>
+		<img width = "960" height = "auto" src = "./Astron/2.png" class = "fig" alt = "Photograph of the front and back covers of the Astron rules"><figcaption>Front and back cover of the rule book</figcaption>
+		<dl>
+		<img width = "960" height = "auto" src = "./Astron/3.png" class = "fig" alt = "Photograph of the inside of the Astron rule book"><figcaption>Inside of the rule book</figcaption>
+		<dl>
+
+	</ul>
+	<li><h2 id = "aspects" class="project_box_title">Observations</h2></li>
+	<ul>
+		<li>A lot of the features I wanted to implement are missing, the redrawing process is fairly slow, and actually playing the game is 
+		somewhat difficult. Having said all this, for a project I worked on during term time, between other assignments, using new tech that was
+		new to me, I'm impressed I got as far as I did. To boot, after having completed my degree and worked a further 3 years in industry, 
+		going back through the code now may as well be hieroglyphics- a curse of having improved since I completed this project. What interests 
+		me looking back the most however, is how much tech I touched on without actually knowing what it was. To do everything I wanted, the game
+		would have required collision detection and resolution, serialisation, and eventually, even some networking. While I didn't manage to 
+		do a lot of this in the time I had, I'm proud I had a go.</li>
+		<dl>
+		<img id = "scr1" width = "960" height = "auto" src = "./Astron/4.PNG" class = "fig" alt = "Screenshot of digital version of Astron"><figcaption>Digital version with 3 players on the board (bases 1, 5 and 6)</figcaption>
+
+	</ul>
+	<li><h2 id = "success" class="project_box_title">How successful has it been?</h2></li>
+	<ul>
+		<li>Ultimately, on the release day, I broke the code which took player commands while trying to fix game breaking issues with collision resolution.
+		Not to mention, between running this on an early microsoft surface, the actual rendering was fairly laggy too. Lastly, I remember there being a fair
+		few off-by-1 errors, but given the code structure, they were difficult to pin down, and I ran out of time. On the day, I ended up running this with 
+		the developer commands I'd added, and had to manage collisions myself. What I had wasn't the game I'd wanted to show off, but with a forgiving audience,
+		and the fact that I even had anything to show at all for a first major project, it still went down well.</li>
+		<dl>
+		<img src = "./Astron/5.PNG" class = "fig" alt = "Screenshot of the console input"><figcaption>Some of the commands between the first <a href = "#scr1" style = "font-size: 17px;">screenshot</a> and the results below</figcaption>
+		<dl>
+		<img width = "960" height = "auto" src = "./Astron/6.PNG" class = "fig" alt = "Screenshot of the digital version, having moved on one space"><figcaption>Digital version moved on one space, 2 of the players have been wiped out</figcaption>
+	</ul>
+	<li><h2 id = "diff" class="project_box_title">What would I do differently if I started over?</h2></li>
+	<ul>
+		<li>The first thing I'd have done is either delay launch, or find another way to give myself more time. I believe I started this early March that year between coursework,
+		and exams which were fast approaching after the holidays in April, so it would have been easy to delay until summer, so some of the pressure would have been removed. If I wasn't
+		restricting myself to what I knew at the time however, I think I'd go back and remake it in another game engine. Potentially <a href="shuttle.html">shuttle engine</a>, or 
+		unity given my experience since then. In fact, where I spent a while making this initially, a remake (using the same assets) would probably fit 
+		neatly into a game jam with my current skillset. I would also go ahead and make it properly multiplayer, aiming for some sort of Kahoot adjacent clone, with players able to play
+		on their phones. I could even add different modes to allow all moves to happen at the same time, for a little more chaos. I think I'd also add AI players, and potentially some new 
+		mechanics without wanting to change the spirit of the game too much. I feel like given the family's history with this game, and its age, a little shaking up (as a separate mode) 
+		couldn't hurt. More importantly though, it'd be a fun opportunity to exercise some flare.</li>
+	</ul>
+	<li><h2 id = "usage" class="project_box_title">How I've been able to use it</h2></li>
+	<ul>
+		<li>Astron was probably one of the most interesting projects I've ever worked on, simply because it was the first game I ever made on my own. It was also the first large project I'd ever done.
+		Having come out of college, and into my first year at university, most of what I was working on for assignments were fairly small, so to start this on the side was a big deal. While I haven't been 
+		able to recycle any of it yet (watch this space, I have a little free time at the moment, and you can refer back to the previous section to see what I have in mind), the biggest impact this 
+		had on my development as a software engineer, was that I was a little bit less afraid of starting large projects, which I'm very grateful to myself for. </li>
+	</ul>
+</ul>
+</div>
+</body>

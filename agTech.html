@@ -1,0 +1,111 @@
+<head>
+<title>Bethany Davis Portfolio</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png?">
+
+</head>
+<div id = "name">
+<h1> Bethany Davis </h1>
+</div>
+<div id = "banner">
+<h1 id = "title"> Advanced Game Technology</h1>
+</div>
+<body>
+<div id = "top">
+<h2>  <a href = "home.html"> Home </a> ><a href = "home.html#course"> Coursework </a> > Advanced Game Technology</h2>
+
+<a href = "#banner"> Back to top </a>
+<ul>
+	<li><h2><a href = "#what">What is it?</a></h2></li>
+	<li><h2><a href = "#how">How it works</a></h2></li>
+	<li><h2><a href = "#aspects">Observations</a></h2></li>
+	<li><h2><a href = "#success">How successful was it?</a></h2></li>
+	<li><h2><a href = "#diff">What would I do differently if I started over?</a></h2></li>
+	<li><h2><a href = "#usage">How I've been able to use it</a></h2></li>
+
+</ul>
+</div>
+
+<div id = "content">
+
+
+<ul>
+	<li><h2 id = "what" class="project_box_title">What is it?</h2></li>
+	<ul>
+		<li>The advanced game technology assignment was to create a short game based on Fall Guys using an engine created for the assignment,
+		which included some simple physics, and a modified version of openGL. We were told to concentrate on fixing and extending 
+		some elements of the physics simulation, such as different types of collision detection, and then to create a functional 
+		level with interesting mechanics and obstacles, with the addition of AI players to compete against.</li>
+	</ul>
+	
+	<li><h2 id = "how" class="project_box_title">How it works</h2></li>
+	<ul>
+		<dl>
+		<iframe width="960" height="540" class = "fig" src="https://www.youtube.com/embed/UDSGwJV5h64" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+		encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video demonstration of a game with an AI"></iframe>
+		<figcaption>Demonstration of a game with the AI</figcaption>
+		<dl>
+		<li>For my project, I chose to focus on making a short level work as well as it could, with a simple text menu for choosing 
+		different options, an assessment of win states and scores, and the ability to close the game. I also made sure to include various features I deemed as 
+		essential, and then worked from there to add complexity, for example kill planes for when players inevitably fell off the platform, basic obstacles to 
+		add some difficulty, pickups which could increase score, a finish line to trigger the end of the game, and basic A* pathfinding for the AI which 
+		attempted to avoid the obstacles where possible.</li>
+		<dl>
+		<iframe width="960" height="540" class = "fig" src="https://www.youtube.com/embed/Mk6fJ8-e7tg" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+		encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video demonstration of the finish line functioning"></iframe>
+		<figcaption>Demonstration of the finish line functioning</figcaption>
+		<dl>
+	</ul>
+	
+	<li><h2 id = "aspects" class="project_box_title">Observations</h2></li>
+	<ul>
+		<li>The game loop itself worked well, and it was very much a continuation of existing projects where I’d created specific game loops. 
+		While this was the easiest part of the project, I take a lot of pride in my efforts. Additionally, the project was a good exercise in managing 
+		feature creep, as I had a hard deadline, which meant I needed to prioritise the elements I was working on carefully.</li>
+		
+		<dl>
+		<img width = "960", height = "auto" src = "./Year4Games/3.PNG" class = "fig" alt = "Screenshot of the menus"><figcaption>The menus</figcaption>
+		<dl>
+	</ul>
+	
+	<li><h2 id = "success" class="project_box_title">How successful was it?</h2></li>
+	<ul>
+		<li>Unfortunately I didn’t have time to complete certain features, such as object oriented bounding boxes, or capsules, which would have allowed me to add 
+		more detail to my game such as slopes and hills to incentivise skillful play, or better collision detection by making the players' colliders capsules. I did achieve 
+		a mark of 73 overall, however I feel there was definitely more I could add in terms of making the game more fun to play. Additionally, there were balance 
+		issues I’d like to have gone back and fixed. Not to mention some of the obstacles being unnecessarily frustrating rather than engaging. I was happy with the 
+		mark however, and I was somewhat pleased with the results, even if the game itself isn’t something I’d choose to play in its present state.</li>
+		<dl>
+		<iframe width="960" height="540" class = "fig" src="https://www.youtube.com/embed/BHhMRO8MsqU" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+		encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video demonstration of some of the obstacles I didn't like"></iframe>
+		<figcaption>Some obstacles I wasn't happy with</figcaption>
+		<dl>
+	</ul>
+	
+	<li><h2 id = "diff" class="project_box_title">What would I do differently if I started over?</h2></li>
+	<ul>
+		<li>I may have prioritised different elements that either didn't make it in, or weren't as polished as I'd have liked, but on a limited time scale, 
+		this would have caused issues elsewhere. The one thing that could have sped things up which didn't occur to me earlier, was
+		actually taking the time to plan the level. Thankfully I took that on board for the <a href ="team.html">team project</a>, and it proved to be a great help.</li>
+	</ul>
+	
+	<li><h2 id = "usage" class="project_box_title">How I've been able to use it</h2></li>
+	<ul>
+		<li>This was a particularly good project for working further on AI. I had had an opportunity to design a simple NPC AI which would follow its own goals based 
+		on in game elements, such as the position of the player, for example, if there was an AI closer to the goal than the player, the AI would focus on reaching the goal.
+		If the player however was closer, the AI would gang up on the player, and try to stop them finishing. This was also influential in considering how I would do some of 
+		the work in my <a href = "y4Diss.html">year 4 project and dissertation</a>. It also helped solidify some simple concepts in programming for games which I had some trouble with- although 
+		possibly due to engine problems- in a third year module.</li>
+		<dl>
+		<iframe width="960" height="540" class = "fig" src="https://www.youtube.com/embed/ZieRJ7mV29w" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+		encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video demonstration of AI behaviour"></iframe>
+		<figcaption>Some of the AI closest to the player targeting the player, rather than the finish line to add challenge</figcaption>
+	</ul>
+
+</ul>
+</div>
+</body>
