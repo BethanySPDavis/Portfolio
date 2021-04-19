@@ -1,0 +1,129 @@
+<head>
+<title>AI GIF Player</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<div id = "banner">
+<img src="bDavis.png" alt="Pixel Art portrait of Bethany Davis" id = "avi">
+<h1 id = "title"> Bethany Davis</h1>
+</div>
+<body>
+<div id = "top">
+<h2> <a href = "home.html"> Home </a> ><a href = "home.html#personal"> Personal Projects </a> > AI Gif Player</h2>
+<a href = "#banner"> Back to top </a>
+<ul>
+	<li><h2><a href = "#what">What is it?</a></h2></li>
+	<li><h2><a href = "#why">Why I made it</a></h2></li>
+	<li><h2><a href = "#how">How it works</a></h2></li>
+	<li><h2><a href = "#aspects">Observations</a></h2></li>
+	<li><h2><a href = "#success">How successful has it been?</a></h2></li>
+	<li><h2><a href = "#diff">What would I do differently if I started over?</a></h2></li>
+	<li><h2><a href = "#usage">How I've been able to use it</a></h2></li>
+
+</ul>
+</div>
+<div id = "content">
+
+
+
+
+
+
+
+
+<ul>
+	<li><h2 id = "what">What is it?</h2></li>
+	<ul>
+		<li>The AI GIF player was a small project I set myself as a challenge in early November 2020. Its function was to automatically transition 
+		between different GIFs to create the appearance of a dancer improvising between different steps. For the project, I animated my own 
+		character dancing, designed a state machine showing which states can transition which way, and then used a pre-existing open source GIF 
+		player to adapt to my own needs.</li>
+	</ul>
+	<li><h2 id = "why">Why I made it</h2></li>
+	<ul>
+		<li>The project was initially made as a challenge and out of curiosity to see if it would work as a concept, rather than as any larger, 
+		more useful piece of work. I planned to use it as a break room of sorts while doing a one off stream for a game friends had asked to watch 
+		me play. While I had wanted to play music in these breakrooms so it wouldn’t just be a stretched out pause, I also thought this wouldn’t 
+		necessarily be enough, and that something should be happening on screen for viewers to watch. I had also decided that a looping gif wouldn’t 
+		be interesting enough, and would cause issues being synchronised to the music, so from these requirements, I decided I’d make a program which 
+		could adapt frame speed based on the music that’s playing, automatically switch between animations to keep them varied, and run indefinitely. </li>
+	</ul>
+	<li><h2 id = "how">How it works</h2></li>
+	<ul>
+		<li>The GIF player itself I left mostly unmodified. I did remove a few UI elements, and was able to remove the dialogue allowing a user to
+		choose files to play, as the file paths were hard coded. The state machine was a custom class I added which had a list of indexes 
+		that the animation could transition to. I also added a parallel list of probabilities for these transitions happening, as I wanted some 
+		animations to happen less often than others. 
+		
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/vuc7sZkymKI" title="YouTube video player" 
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen class = "fig" alt = "Video of the GIF player functioning for one song with different animations" ></iframe>
+		<figcaption>Example of the GIF player functioning for one song with different animations</figcaption>
+		
+		
+		
+		As for the BPM read in, this was more complicated. Using foobar to play the music files, I 
+		manually added a BPM tag to all the files in the playlist I was using. I then used an extension to print the current track name and artist to 
+		file, using the format [ARTIST] – [TRACK NAME], and the BPM as a string on the next line (e.g. 120.2). The GIF Viewer program was then 
+		modified to attempt to keep trying to read this file at intervals of 250 milliseconds, and if it detects a change, change the frame speed 
+		accordingly.
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/QNGyTF1Fr3g" title="YouTube video player" 
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen class = "fig" alt = "Video of the GIF player changing tempo between tracks"></iframe>
+		<figcaption>Example of the GIF player changing tempo between tracks</figcaption>
+		
+		
+		</li>
+	</ul>
+	<li><h2 id = "aspects">Observations</h2></li>
+	<ul>
+		<li>It was built on a very short time scale, between the date of the stream, and coursework I had due at the time. Additionally, this was 
+		the first time I’d adapted an existing program rather than having written my own from scratch, or at least using pre-existing classes. 
+		Also, the 250 millisecond interval was a necessary introduction rather than one of design, as doing it every time the loop passed it 
+		effectively wrested control of the file over from Foobar, and the extension was no longer able to update the BPM, which meant it stopped 
+		functioning until I put the interval in. There were also issues with the framerate. Seemingly randomly, it would just get very choppy, 
+		and then come back again. This might have been as I was reading from an HDD, and streaming in HD at the same time, but I wouldn’t have 
+		thought this would cause the major problems that I was seeing.
+		
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/RQqYpji_g6U" title="YouTube video player" 
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen class = "fig" alt = "Video of the GIF player exhibiting some choppiness during a stream" ></iframe>
+		<figcaption>Example of the GIF player exhibiting some choppiness during a stream</figcaption>
+		
+		
+		</li>
+	</ul>
+	<li><h2 id = "success">How successful has it been?</h2></li>
+	<ul>
+		<li>The final product ended up being very  close to what I’d envisioned when I started designing it. Ultimately, I was able to put a state 
+		machine in a GIF player, and effectively have a dancer improvise a dance from a set number of steps. While the BPM does lose sync with the 
+		actual animation frequently, the change was enough to be noticeably different between tracks. I’m not sure what caused this, but my first 
+		two guesses would be incorrect calculations (although I went over them as much as I could in the time I had), or potential weirdness where 
+		code I had written was making the player skip a frame, which of course would make the animations lose sync. Either way, without being able 
+		to respond to the actual sounds, it was never going to be able to be 100% in sync, especially with some tracks speeding up and slowing down 
+		part way through. Visually though, it definitely fulfilled its function as an amusing addition to a piece of content that overshadowed it 
+		by quite a long way.</li>
+	</ul>
+	<li><h2 id = "diff">What would I do differently if I started over?</h2></li>
+	<ul>
+		<li>I’d give myself more time so that I could actually write my own gif player with everything extraneous removed, such as a lot of the UI, 
+		which was trying to provide support for file association, or display which frame the player was in, along with controls that I didn’t need. 
+		I’d also more rigorously bug test. While this was more of an amusing side project as a proof of concept than anything particularly serious, 
+		it’d be interesting to see if I could make something similar but more polished given the time, without the issues that I encountered. I’d 
+		also avoid hard coding the files. It makes it extremely difficult to show off, especially since I’ve recently changed my windows 
+		installation, moved hard drives, and found that referencing the C drive directly doesn’t work, when the files aren’t on the C drive.</li>
+	</ul>
+	<li><h2 id = "usage">How I've been able to use it</h2></li>
+	<ul>
+		<li>It was extremely useful as a demonstration for how animation can work in a program, and I took a lot of the principles that I found to 
+		heart in choosing how my animations work in Shuttle Engine. Ultimately, I’ve only used it once, as I tend not to stream games, so it was 
+		more of an amusing gimmick than anything else, but it was a very interesting concept to explore, and encouraging to see myself finish a 
+		self-managed project on such a short time scale with no real feature cuts. It also helped make state machines less intimidating. While in 
+		year 3, I had worked on state machines for an assignment, and <a href = "Fight.html">Fight Knight</a> featured an extremely limited one, and I didn’t find state 
+		machines particularly intimidating to begin with, it was good to see that I could make one from scratch with no guidance to fulfil a 
+		specific role.</li>
+	</ul>
+
+</ul>
+</div>
+</body>

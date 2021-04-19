@@ -1,0 +1,118 @@
+<head>
+<title>Games Development</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<div id = "banner">
+<img src="bDavis.png" alt="Pixel Art portrait of Bethany Davis" id = "avi">
+<h1 id = "title"> Bethany Davis</h1>
+</div>
+<body>
+
+<div id = "top">
+<h2> <a href = "home.html"> Home </a> ><a href = "home.html#course"> Coursework </a> > Games Development</h2>
+<a href = "#banner"> Back to top </a>
+<ul>
+	<li><h2><a href = "#what">What is it?</a></h2></li>
+	<li><h2><a href = "#why">Why I made it</a></h2></li>
+	<li><h2><a href = "#how">How it works</a></h2></li>
+	<li><h2><a href = "#aspects">Observations</a></h2></li>
+	<li><h2><a href = "#success">How successful has it been?</a></h2></li>
+	<li><h2><a href = "#diff">What would I do differently if I started over?</a></h2></li>
+	<li><h2><a href = "#usage">How I've been able to use it</a></h2></li>
+
+</ul>
+</div>
+<div id = "content">
+
+<ul>
+	<li><h2 id = "what">What is it?</h2></li>
+	<ul>
+		<li>Fight Knight was a short game I made for a module wherein we had to design and develop our own games individually in a short time frame. 
+		It’s primarily based on the “Souls” formula of combat, where animation cancelling is impossible, attacks come out slowly, it’s easy to be 
+		interrupted at the wrong point of the animation, and stamina has to be monitored carefully. While I added a few twists myself, and some are 
+		reminiscent of Hyper Light Drifter, which I didn’t play until a few months after completing this project, the main differences were that it 
+		was in Isometric (like Hyper Light Drifter), and would only feature a single enemy, a frustrating problem that I didn’t have time to develop 
+		around.</li>
+		<br>
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/KNntQx6ug78" title="YouTube video player" frameborder="0" allow="accelerometer; 
+		autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "fig" alt = "Video of FightKnight in normal mode"></iframe><figcaption>FightKnight in normal mode</figcaption>
+	</ul>
+	<li><h2 id = "why">Why I made it</h2></li>
+	<ul>
+		<li>Like many developers in recent years, I’ve been enamoured with the “Souls” formula of games. I find the combat feels better than anything 
+		I’ve played that’s remotely similar, and the level of polish and quantity of content endears them to me further. Particularly Demon’s Souls. I’ve also been 
+		very into Isometric games for a long while. How they scale onto portable consoles is extremely interesting to me, allowing developers to create 
+		huge arching stories which feasibly fit into your pocket in a way that larger full 3D titles never seem to quite manage in my opinion, while 
+		also retaining all the conveniences of normal handheld console entries, to make adventures of pretty much any size that can be enjoyed to 
+		their fullest anywhere. Having not played many isometric games which borrowed from this style of gameplay (and of course not having played 
+		Hyper Light Drifter at this point, with no spare time to do so), I decided to see how the concept would work myself, and pushed myself to make 
+		the system fit into GDevelop, which we were encouraged to use for its simplicity, and I chose to go with as I wanted to focus on getting the 
+		systems working and creating the necessary animations, rather than spending time programming a lot of it from scratch.</li>
+	</ul>
+	<li><h2 id = "how">How it works</h2></li>
+	<ul>
+		<li>GDevelop is a drag and drop engine, and as such is highly limited. It’s also very quick to prototype with, as the code blocks are fairly 
+		intuitive, and it’s not very easy to create something that runs badly – at least not in my experience. One specific aspect of the game I was quite 
+		pleased with, was how I handled combos and animation cancelling. The player and the enemy are only able to achieve a light 1 -light 2, light 1- 
+		heavy 2, or heavy 1-heavy 2 combo, the animations can’t be cancelled manually, although they can be interrupted if hit early enough in the attack. 
+		The enemy’s AI is also very simple. It simply updates the position based on the player’s relative position, then attempts to attack when in range. 
+		To add a little variance, the enemy also becomes more likely to attack, and hits harder as its health goes down. It wasn’t particularly advanced, 
+		but was enough of a challenge to be engaging. Also, the level takes place in a square arena with no obstacles. This meant no actual pathfinding 
+		algorithm is necessary, just the addition of forces. While very simple, it did prove effective. To add tension, I also included music which 
+		escalates proportionally with the enemy’s health bar.</li>
+		
+		
+		
+		
+	</ul>
+	<li><h2 id = "aspects">Observations</h2></li>
+	<ul>
+		<li>One of the huge limitations with this project was that I wasn’t happy with any existing assets I could find. I did try searching open game art, 
+		but ultimately it didn’t have exactly what I want. Usually I would compromise, but specific attack types were integral to the system, and the 
+		timings would be hard coded to speed up development, so I had to create all of the animations for both characters from scratch. As a compromise 
+		with that, the enemy is just a palette swap of the player’s character. I had a similar issue with the music, in that I couldn’t find anything that 
+		I thought fitted, so I wrote my own for the project, which, while proving to have audio balancing issues I later “fixed” with volume controls, 
+		seemed to fit better with the mood I wanted to create, and worked well when transitioning between different phases, if not seamlessly.</li>
+	</ul>
+	<li><h2 id = "success">How successful has it been?</h2></li>
+	<ul>
+		<li>Overall, the project received 90%, with the main issue being the second part of the submission lacking any real additional content, as I’d chosen 
+		to overhaul some of the mechanics to be more user friendly, over the unusual parry system I had in place before. I was happy with the mark, but do 
+		wish that I could have included a more structured level with better enemies. Unfortunately, this would be impossible with the current code base, as 
+		the enemy is hard coded in the main file using the code blocks to behave how it does, rather than as any sort of AI module. Additionally, by 
+		structuring a level more, it would have required proper pathfinding, which I couldn’t get working with the animation system, so I’d backed myself into 
+		a corner with the feature set. As something to build on in future projects however, I’ve already managed to somewhat replicate the systems for 
+		animation I had in place before with <a href = "shuttle.html">Shuttle Engine</a>, and considering I have all of the animations in individual PNGs which work with my engine, a port 
+		should be fairly trivial, with a lot of room for improvement, and a removal of the GDevelop logo at launch, along with some of the bloat in the file 
+		size where parts of code weren’t reusable.</li>
+	</ul>
+	<li><h2 id = "diff">What would I do differently if I started over?</h2></li>
+	<ul>
+		<li>At the time, I could have managed the project better, and spent more of my time organising the code base to keep it future proof for potential 
+		content addition, so I could at least have multiple levels occurring in the same space, where enemies attack in waves. I’d also have spent less time 
+		putting the comedy mode in. During development, it seemed to fit the bill of the required additional content for the second part of the assignment, but 
+		looking back, the additions were anaemic, mostly surface level, and took longer to add than they deserved. 
+		<iframe width="960" height="540" src="https://www.youtube.com/embed/MUDO7lghbxU" title="YouTube video player" 
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "fig", alt = "Video of FightKnight in comedy mode"></iframe>
+		<figcaption>FightKnight in comedy mode</figcaption>
+		
+		
+		As a smaller change, I’d also scale down the 
+		enemy’s health, but only in concert with the addition of multiple enemies at once, this is because from a “Souls” perspective, the enemy I’d created had 
+		more in common with the standard knight enemies from Demon’s Souls than any of the bosses, which usually had far more interesting aspects to their design.</li>
+	</ul>
+	<li><h2 id = "usage">How I've been able to use it</h2></li>
+	<ul>
+		<li>It’s been very good practice for animating pixel art. Previously this wasn’t something I’d worked on much, and outside of just meaning I can create 
+		functional pixel art for use in games, it’s given me a better understanding of the anatomy of combat in games, looking at the timings of parts of an 
+		attack, such as when to start checking a sword hitbox with a body hitbox. It was also a very good project for learning about balance issues. While the 
+		year 4 team project certainly had balance issues in its first iteration, and somewhat in the second, Fight Knight’s issues were far more apparent, as 
+		the first system wasn’t widely understood, and caused nothing but frustration. It was also just too difficult for use with the small quantity of content 
+		that was there, so learning about what I can change to make something more engaging, especially with the positive results I had with the second iteration 
+		was extremely useful.</li>
+	</ul>
+
+</ul>
+</div>
+</body>

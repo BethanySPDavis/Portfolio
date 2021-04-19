@@ -1,0 +1,128 @@
+<head>
+<title>Shuttle Engine</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<div id = "banner">
+<img src="bDavis.png" alt="Pixel Art portrait of Bethany Davis" id = "avi">
+<h1 id = "title"> Bethany Davis</h1>
+</div>
+<body>
+<div id = "top">
+<h2> <a href = "home.html"> Home </a> > <a href = "home.html#personal"> Personal Projects </a> > Shuttle Engine</h2>
+<a href = "#banner"> Back to top </a>
+<ul>
+	<li><h2><a href = "#what">What is it?</a></h2></li>
+	<li><h2><a href = "#why">Why I made it</a></h2></li>
+	<li><h2><a href = "#how">How it works</a></h2></li>
+	<li><h2><a href = "#aspects">Observations</a></h2></li>
+	<li><h2><a href = "#success">How successful has it been?</a></h2></li>
+	<li><h2><a href = "#diff">What would I do differently if I started over?</a></h2></li>
+	<li><h2><a href = "#usage">How I've been able to use it</a></h2></li>
+
+</ul>
+</div>
+
+<div id = "content">
+
+
+<ul>
+	<li><h2 id = "what">What is it?</h2></li>
+	<ul>
+		<li>The shuttle engine was a project I started back in December 2020. It was designed to be an isometric engine, which would be extremely lightweight, 
+		and avoid reliance on any outside libraries so I could minimise size, and avoid calling any methods which I didn’t have full control over, and 
+		therefore couldn’t necessarily optimise, for example collision detection. At the moment, it uses a tile based background, which sorts at launch to 
+		avoid reducing framerate, and can also have tile based objects. At the moment, it uses a custom hitbox and collision detection algorithm, with the 
+		ability to detect multiple convex hulls per object, and the current feature I’m working on is serialisation, so an entire game can be saved to a file, 
+		and loaded in independently of the engine to preserve abstraction. </li>
+		<img width = "960" height = "auto" src = "./Shuttle Engine/1.png" class = "fig" alt = "Screenshot of a scene in Shuttle Engine's demo game, with debug lines"> <figcaption>Demo game with debug lines</figcaption>
+
+	</ul>
+
+	<li><h2 id = "why">Why I made it</h2></li>
+	<ul>
+		<li> I started it as a project partially in response to my previous work in the <a href = "Fight.html">year 3 game development module</a> where I made a short game “Fight Knight”, 
+		and found GDevelop extremely limited. At the time, I’d wanted highly specific things, but also didn’t have the time to use a more comprehensive engine 
+		properly, due to the scale of the project, and how much I was making from scratch. I also had more ideas for games I’d liked to have made, but found the 
+		process of working with GDevelop too frustrating to want to progress with what I’d originally planned for Fight Knight or anything else. While I could 
+		have used an existing engine, such as Unity, Unreal or Godot, I wanted the challenge of making something of my own, the control it would give me over 
+		the individual components, and the advantages it would give me by cutting down on generalisation in favour of better performance, and compatibility with 
+		lower spec platforms, such as Mac, particularly older models, PS Vita, 3DS, PS3, and Xbox 360. </li>
+		<img width = "960" height = "auto" src = "./Shuttle Engine/performance low.png" class = "fig" alt = "Screenshot of a low intensity scene in Shuttle Engine's demo game with performance metrics"> 
+		<figcaption>Low intensity scene (439fps, 346 99%fps)</figcaption>
+	</ul>
+
+	<br>
+	<li><h2 id = "how">How it works</h2></li>
+	<ul>
+		<li>While the engine uses fairly standard methods to achieve physics integration, collision detection, and rendering, there are important changes which 
+		have been made to improve the performance based on knowing how the entire engine is put together. For example, rather than relying on depth testing, the 
+		engine already has access to information on the z layer of each texture, because the layers load in pre-sorted, and only a few objects can move on the z 
+		axis. As such, I was able to eliminate depth testing, and just render the objects back to front with no issues. 		
+		<br>
+		<iframe class = "fig" width="960" height="540" src="https://www.youtube.com/embed/rThyVSJQJpY" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video example of Z layering at work with transparent textures"></iframe>
+		<figcaption>Demonstration of working Z layers in Shuttle Engine</figcaption> 
+		<br>
+		Additionally, a lot of the textures are 
+		loaded in sorted into their positions, which means that the renderer has a vastly reduced workload compared to throwing objects at it and letting the GPU  
+		decide what to do, especially on machines which may only have an integrated GPU. While not so much of a performance issue, the engine also gives 
+		me a great deal of control over animations. I learned a lot about animating frames while on my <a href = "AIGIF.html">GIF AI project</a>, and I was able to transfer the most useful 
+		elements over, so that animation speed, and image scale are both extremely easy to control. Not to mention, it can be synchronised with hitboxes to allow 
+		for animation with them as well, if only in the sense of stop motion. </li>
+		<br>
+		<iframe class = "fig" width="960" height="540" src="https://www.youtube.com/embed/0SRnUBpRDKI" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video example of different animation types"></iframe>
+		<figcaption>Different animation types</figcaption>
+		
+	</ul>
+	<li><h2 id = "aspects">Observations</h2></li>
+	<ul>
+		<li>Currently, without any of the necessary code for sound (which I’m planning to use OpenAL for), or menus, the entire engine with a small randomly 
+		generated test level, and my entire <a href = "y3Diss.html">year 3 dissertation project</a> stands at around just under 6mb. As an already fairly full featured engine, this is 
+		extremely encouraging for use on older systems. Especially factoring physical distribution of cartridges if any game I make ever gets that far, 
+		particularly given that this is without any of the kinds of reduction that an engine like Unity calls for when reducing file sizes. Most importantly, as I 
+		mentioned previously, this actually works with my <a href = "y3Diss.html">year 3 dissertation</a>. While large distances in A* don’t compute so quickly, the actual level generation 
+		end of it works as well as when I tested it previously, and with some improvements to the A* algorithm, it should be able to run at launch without vastly 
+		long load times if I want to keep using the random generation aspect.</li>
+		<img src = "./Shuttle Engine/5.png" class = "fig" alt = "Screenshot of console output for loading"> <figcaption>Load times in milliseconds (loaded in approx 56 seconds)</figcaption>
+		<br>
+		<li>
+		Interestingly, in this example which uses my <a href = "y3Diss.html">year 3 project and dissertation</a>, the actual load in for the structure generator is 9 milliseconds.
+		</li>
+	</ul>
+	<li><h2 id = "success">How successful has it been?</h2></li>
+	<ul>
+		<li>While the engine hasn’t been used for any full games yet, every iteration so far has worked, and I’ve been able to keep it fairly modular and well 
+		managed, adding a new feature in at each stage. Only a few changes have been needed with older features to get the newer ones to work, for example, the 
+		serialiser has required that all lists of lists are dealt with, which was a very easy fix, if slightly unorthodox. It also runs well on machines I’ve tested 
+		it on, with friends on lower spec laptops reporting framerates of around 40 for very large maps with objects which span extremely large spaces. Additionally
+		, since the last test where I handed it out to people with low spec machines, I’ve added a few fixes for these larger objects, which should noticeably 
+		improve the framerate for the next test, and has dramatically reduced the workload. Also, at a certain level, these are stress tests. A game at release 
+		would be better compartmentalised to make better use of the engine’s capabilities.</li>
+		<img width = "960" height = "auto"src = "./Shuttle Engine/performance high.png" class = "fig" alt = "Screenshot of a high intensity scene in Shuttle Engine's demo game with performance metrics"> 
+		<figcaption>High intensity scene (159fps, 136 99%fps)</figcaption>
+	</ul>
+	<br>
+	
+	<li><h2 id = "diff">What would I do differently if I started over?</h2></li>
+	<ul>
+		<li>The first thing I would change is that I’d write it in C++. I’d be able to get yet more speed out of it that way by managing memory better, I could just 
+		use openGL, rather than needing the wrapper, and it would end the circular logic which has been brought about by my <a href = "y3Diss.html">year 3 dissertation</a>, which was built for use 
+		with unity primarily. I would also make a more detailed plan before starting. While Shuttle Engine has effectively remained modular and relatively easy to 
+		manage, the code base is still large, and each new feature requires more checking. A less waterfall style of development would have been more beneficial for 
+		this, as I’d know in more detail what I was planning for. Having said that though, as a lone developer, it’s difficult to do anything but waterfall, as I’m on 
+		the critical path for everything, and I have been able to effectively prioritise each element of the engine, not to mention that it has all worked, and 
+		continues to do so with everything I add. </li>
+	</ul>
+	<li><h2 id = "usage">How I've been able to use it</h2></li>
+	<ul>
+		<li>While I haven’t completed anything with it beyond the test level so far, I’m using it in my <a href = "y4Diss.html">year 4 dissertation</a> to allow for a graphical representation of 
+		the test village, and so I can measure the metrics of the AI easily, as I have access to every class, and a full understanding of how all of it works. I also have 
+		three major projects in planning which I’d like to do, including a more full realisation of what I wanted to achieve with <a href = "Fight.html">Fight Knight</a>, possibly using the original 
+		animations, a more cerebral project inspired by Ico and Hyper Light Drifter, and a larger scale game based more around specific mechanics I’ve been developing.</li>
+	</ul>
+
+</ul>
+</div>
+</body>
