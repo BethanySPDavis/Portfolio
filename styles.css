@@ -51,7 +51,7 @@ a:active{
 
 /*Title*/
 #title{
-	font-size: 200px;	
+	font-size: 60px;	
 	margin: 0px;
 	padding: 0px;
 
@@ -67,11 +67,11 @@ a:active{
 #top{
 	padding-left: 10px;
 	padding-top: 15px;
+	margin-top: 10px;
 	padding-bottom: 15px;
 	padding-right: 10px;
 	font-size: 30px;
 	left: 8;
-	top: 31%;
 	position: fixed;
 	background-color: #e8edec;
 	width: 18%;
