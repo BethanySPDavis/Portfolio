@@ -43,8 +43,8 @@ a:active{
 /*top banner*/
 #banner{
 	padding-top: 20px;
-	justify-content: center;
 	width: 100%;
+	justify-content: center;
 	display: flex;
 	background-color: #e8edec;
 }
@@ -56,7 +56,15 @@ a:active{
 	padding: 0px;
 
 }
+#name{
+	position: absolute;
+	text-align: left;
+	font-size: 60px;	
+	left: 15px;
+	top: 3px;
+	padding: 0px;
 
+}
 /*Main content*/
 #content{
 	padding-left: 20%;
