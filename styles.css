@@ -109,3 +109,33 @@ figcaption{
 *:target {
 	background-color: #E8EDEC;
 }
+
+
+/*Additional code by Logan*/
+
+#website_container
+{
+	position: relative;
+}
+
+#content
+{
+	margin-left: 16px;
+}
+
+.project_container
+{
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.project_box
+{
+	width: 45%;
+	position: relative;
+	display: inline-block;
+	margin: 8px 0;
+    padding: 8px 16px;
+    vertical-align: top;
+}
