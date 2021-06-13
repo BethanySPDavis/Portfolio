@@ -1,14 +1,11 @@
 <head>
-<title>Bethany Davis Portfolio</title>
+<title>Project and dissertation (Year 4)</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png?">
 
 </head>
-<div id = "name">
-<h1> Bethany Davis </h1>
-</div>
 <div id = "banner">
-<h1 id = "title">Project and dissertation (Year 4)</h1>
+<img src="bDavis.png" alt="Pixel Art portrait of Bethany Davis" id = "avi">
+<h1 id = "title"> Bethany Davis</h1>
 </div>
 <body>
 <div id = "top">
@@ -35,61 +32,78 @@
 <ul>
 	<li><h2 id = "what">What is it?</h2></li>
 	<ul>
-		<li>The goal of my project and dissertation for year 4 is to create a state machine based AI which uses simulated emotion in its decision making process. 
-		Similarly to my year 3 project and dissertation, it’s a project I’m approaching with the intention of using as a black box of sorts with other existing 
-		projects. It’s being programmed in C# for use with Shuttle Engine, and the current plan is to use two separate state machines (one for emotion, one for 
-		action) in a small simulated medieval village to test how the AI will process different systems, represented as jobs you might expect to find in a 
-		medieval village of questionable accuracy, such as fishing, soldiery, farming, trading, and smithing and other forms of crafts.</li>
+		<li>The goal of my project and dissertation for year 4 was to create a state machine based AI which uses simulated emotion in its decision making process. 
+		Similarly to my year 3 project and dissertation, it’s a project I approached with the intention of using as a black box of sorts with other existing projects, 
+		such as shuttle engine (the engine I used for the project). For compatibility with shuttle engine, it was programmed in C# and uses several state machines 
+		stacked together per AI to combine logical choices and felt emotions to change how they perform in real time. The finished demonstration for the project 
+		was set in a small medieval village named “Emotion Hamlet”, wherein the player can go watch (and somewhat participate in) a farming game involving a foreman 
+		and a farmer, or go practice fighting soldiers in an arena.</li>
 	</ul>
-	<li><h2 id = "why">Why I'm making it</h2></li>
+	<li><h2 id = "why">Why I made it</h2></li>
 	<ul>
-		<li>I picked this as a project because I wanted to get even more familiar with AI after my previous work on the <a href = "AIGIF.html">GIF player</a>, the <a href = "Fight.html">Games Development Project</a>, 
+		<li>I picked this as a project because I wanted to get even more familiar with AI after my previous work on the GIF player, the Games Development Project, 
 		and previous coursework, and because I was inspired from having watched Star Trek: The Next Generation. Data's continual comments about not being able to feel 
-		emotion provoked me to start thinking about how you could make a robot feel emotions. Additionally, looking at episodes such as The Quality of Life, wherein 
-		Data believes small robots are exhibiting signs of self-preservation, it made me consider what benefit emotions would have to a robot. Data himself seems to 
-		frequently bring up the potential benefits to not feeling them for the purposes of his job, while also bringing up the negatives. In a game context however, 
-		this would be invaluable, as more human AI is something each generation of games has tried to achieve in numerous different ways. F.E.A.R. for example, a 15 
-		year old game at time of writing is still notable and praised for its use of goal-oriented action planning AI. <br> While many studios keep their techniques 
-		under wraps, the last major release to have any real clamour around its use of AI was Hello Games’ Hello Neighbor. While the field of AI is highly advanced 
-		in an academic sense, games seem to lag behind, not because they aren’t sufficiently advanced, purely because a game has a lot to juggle in keeping up with 
-		expected performance, and the more advanced the AI, the more expensive it is to run, which means the less likely a studio is to use it over existing 
-		technology. My solution was to create a light weight, simple AI, such as a state machine, then model it to respond to certain emotions, which could be 
-		updated from in game conditions, rather than creating any particularly elaborate way for the AI to feel. The desired goal would be the effects.</li>
+		emotion provoked me to start thinking about how it would be possible to make a robot feel emotions. Additionally, looking at episodes such as The Quality of Life, 
+		wherein Data believes small robots are exhibiting signs of self-preservation, it made me consider what benefit emotions would have to a robot. Data himself 
+		seems to frequently bring up the potential benefits to not feeling them for the purposes of his job, while also bringing up the negatives. In a game context 
+		however, this would be invaluable, as more human AI is something each generation of games has tried to achieve in numerous different ways. F.E.A.R. for example, 
+		a 15 year old game at time of writing is still notable and praised for its use of goal-oriented action planning AI.
+		<br>
+		While many studios keep their techniques under wraps, the last major release to have any real clamour around its use of AI was Hello Games’ Hello Neighbor. 
+		While the field of AI is highly advanced in an academic sense, games seem to lag behind, not because they aren’t sufficiently advanced, purely because a game 
+		has a lot to juggle in keeping up with expected performance, and the more advanced the AI, the more expensive it is to run, which means the less likely a studio 
+		is to use it over existing technology. My solution was to create a light weight, simple AI, such as a state machine, then model it to respond to certain emotions, 
+		which could be updated from in game conditions, rather than creating any particularly elaborate way for the AI to feel. The desired goal would be the effects.
+		</li>
 	</ul>
-	<li><h2 id = "how">How it will work</h2></li>
+	<li><h2 id = "how">How it works</h2></li>
 	<ul>
-		<li>The current plan I have in place is to use multiple state machines. As they’re fairly inexpensive to run, and the game tracks all of the stats which are 
-		used for it anyway, it shouldn’t be a huge performance drain to update several at once per character. At one level would be the animations of the character, 
-		the next level would be which action they’re taking, and at the very top would be a state machine determining what emotion the character should be feeling 
-		based on statistics it’s currently tracking, which in turn affect probability of transitioning between states, which then affect what the character does. 
-		The desired effect, is that for example, a soldier which is in a flock of 1, facing off against the player will be more defensive than a soldier in a flock 
-		of 10. Similarly, a smith who has had a piece of work paid for at a good price may be said to feel happy, and might output a higher quality of work at a 
-		faster rate. This will be measured against a corresponding control AI designed to do the same things without the emotions. My theory is that while subtle, 
-		the effects of the emotions should make the village more engaging over time (tricky to measure, although I will be able to look at printouts of probabilities 
-		of transitioning between various states, and barks from the characters as to how they’re feeling). The other desired outcome of course, is that there won’t 
-		be a great deal of performance change between the two different AI.</li>
+		<li>The AI uses several state machines to run at different levels. At the top level is the state machine for controlling actions. This makes all logical 
+		decisions on what to do in any given situation, for example, if a combat AI is near the player, they will attack the player assuming they’re able to do so. The 
+		next level is the emotion machine, which has two parts, emotions and traits. Traits are slow to change, and respond only to the current emotions. This is to give 
+		the AI a certain sense of “memory” over time, in that the more they feel certain emotions, the more pre-disposed they will be to performing certain actions over 
+		others. Emotions however respond to in game stimulus, which can be both from the game world, or even the actions the AI performs. These are combined into the 
+		modifiers, a set of stats similar to RPG stats from games such as Demon’s Souls, which influence some low level elements, such as animation speed, movement speed, 
+		or the odds of performing certain actions, and some higher level elements, such as how well certain actions will pan out, what they are is of course completely up 
+		to implementation. All of this then feeds into animation control, which decides what the player is doing, for example, if the AI is already attacking, there’s 
+		deliberately no animation cancelling, so they can’t immediately attack again, or alternatively break out of it and move away. 
+		<br>
+		<img width = "960", height = "auto" src = "./Year4Diss/1.png" class = "fig" alt = "Screenshot of the menus"><figcaption>Diagram of the structure of this project's AI</figcaption>
+
+		While the specifics of the implementation is open-ended, allowing for creativity on the game designer’s part, in terms of what the emotional feedback is, what the 
+		specific modifiers are, or the values each emotion modifies, the structure is very important for the system to work properly, and also requires some specific parts 
+		of implementation. For example, a neutral emotion ensures that emotions are applied properly over time and not infinitely, maxing out certain traits.</li>
 	</ul>
-	<li><h2 id = "success">How successful has it been so far?</h2></li>
+	<li><h2 id = "success">How successful was it?</h2></li>
 	<ul>
-		<li>While the project is still progressing, the research I’ve managed to find so far has been encouraging, and the accompanying project in <a href = "shuttle.html">Shuttle Engine</a> is 
-		at a point where everything I need for this project can just be added in without making any changes. Additionally, the planning stage is pretty much finished, 
-		and given that I’ve learned from my <a href = "y3Diss.html">year 3 dissertation</a> being badly planned if successful, it should help the remaining body of work take place significantly 
-		faster, and much more easily. It’s also a project I’m not having to create from scratch at a level of the principle, and has an existent body of work 
-		surrounding it, if fairly small.  </li>
+		<li>While I’ve yet to receive the marks, I would say the project has very much achieved everything I’d hoped for. The system works in both minigames, with different 
+		results. Changing the traits at launch affects what each AI is capable of quite noticeably, and with continued interaction, the AI eventually develop “personalities” 
+		of sorts, as I’d hoped they would. Additionally, the update speeds were extremely fast, and while they were approximately three times slower than AI without emotions, 
+		I’d fully expected this, and the difference was between just over 0.004 milliseconds, and 0.013 milliseconds on average, depending on which algorithm the emotion 
+		machine was using to apply emotions to traits, so still excellent performance, especially considering the benefits. Ultimately, there were some issues. Many of the 
+		values were hardcoded, and some of the game mechanics didn’t work as well as I’d like, however, I’d put this more down to using and re-using other working elements 
+		for speedy results, rather than legitimate game breaking issues. Not to mention, the finished product wasn’t intended to be a commercially viable game, the finished 
+		AI was the main focus, and given that it works, and can be re-used, perhaps with a modification to the specific values it runs on, the project can be declared a 
+		resounding success.</li>
 	</ul>
 	<li><h2 id = "diff">What would I do differently if I started over?</h2></li>
 	<ul>
-		<li>While I can’t look back on the project just yet, I know I’d already rather have done it in C++. It goes back to the circular logic I used to justify making 
-		<a href = "shuttle.html">Shuttle Engine</a> in C#, but ultimately, a lot of the code for this should be easily portable, so I’m not as concerned. Also, I might have made an earlier start, 
-		but there was somewhat of an overlap with the <a href = "team.html">group project</a>, and the planning stage went a lot better than I’d come to expect from my <a href = "y3Diss.html">year 3 project and 
-		dissertation</a>, so I’m not too concerned about that either.</li>
+		<li>As per many of my other projects, I’d much rather have done it in C++, however writing it in C# was a concession worth making to add yet another unusual module 
+		to Shuttle Engine, which I can now use in any personal project I’d like. Furthermore, most of the code is very easily portable and not particularly complicated, 
+		most of the complication comes from the structure and importance thereof, so porting it to C++ or any other language shouldn’t be overly difficult. The biggest 
+		issue with this project however was time management. Ultimately, if I’d started earlier, I’d have been able to make a lot of the later code rely less on hardcoded 
+		values, and capable of taking lambdas for per-object functions, as this is a part of my engine I’m working on at the moment, which has rendered my test level 
+		un-loadable on the current version of shuttle engine, however, this would have happened eventually no matter what I added, it just may have taken longer. Additionally, 
+		there was a great deal of overlap with the <a href team project> team project</a>, and given my input was affecting other people’s grades, rather than just my own, 
+		I prioritised it more heavily. Not to mention, the planning stage of this project went far better than <a href>the year 3 project and dissertation</a>, so creating 
+		the actual project was far quicker.</li>
 	</ul>
-	<li><h2 id = "usage">How it will be useful to me in the future</h2></li>
+	<li><h2 id = "usage">How this will be useful to me</h2></li>
 	<ul>
-		<li>As well as being a fairly deep dive into the world of AI, it’ll also be a welcome addition to my growing collection of black-box style projects I can simply 
-		plug into <a href = "shuttle.html">Shuttle Engine</a>. So I hope that the knowledge I gain from working with AI at this level, in a state which is well researched, and still used extensively 
-		in commercial projects will be useful. I also hope it’s something I can reuse in future personal projects, as having an AI influenced by emotions in a project- 
-		even if they are modelled manually, completely simulated, and possibly difficult to set up properly- is no small claim to make.</li>
+		<li>As well as being a fairly deep dive into the world of AI, it’s also be a welcome addition to my growing collection of black-box style projects I can simply plug 
+		into Shuttle Engine. So I hope that the knowledge I’ve gained from working with AI at this level, in a state which is well researched, and still used extensively 
+		in commercial projects will be useful for potential commercial and personal projects, as well as anything I might do in industry, as having an AI influenced by emotions 
+		in a project- even if they are modelled manually and completely simulated, - is no small claim to make.</li>
 	</ul>
 
 </ul>
