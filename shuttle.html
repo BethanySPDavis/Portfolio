@@ -35,9 +35,7 @@
 		<li>The shuttle engine was a project I started back in December 2020. It was designed to be an isometric engine, which would be extremely lightweight, 
 		and avoid reliance on any outside libraries so I could minimise size, and avoid calling any methods which I didn’t have full control over, and 
 		therefore couldn’t necessarily optimise, for example collision detection. At the moment, it uses a tile based background, which sorts at launch to 
-		avoid reducing framerate, and can also have tile based objects. At the moment, it uses a custom hitbox and collision detection algorithm, with the 
-		ability to detect multiple convex hulls per object, and the current feature I’m working on is serialisation, so an entire game can be saved to a file, 
-		and loaded in independently of the engine to preserve abstraction. </li>
+		avoid reducing framerate, and can also have tile based objects. The current feature I’m working on is sound and some general optimisation </li>
 		<img width = "960" height = "auto" src = "./ShuttleEngine/1.PNG" class = "fig" alt = "Screenshot of a scene in Shuttle Engine's demo game, with debug lines"> <figcaption>Demo game with debug lines</figcaption>
 
 	</ul>
@@ -81,27 +79,27 @@
 	</ul>
 	<li><h2 id = "aspects">Observations</h2></li>
 	<ul>
-		<li>Currently, without any of the necessary code for sound (which I’m planning to use OpenAL for), or menus, the entire engine with a small randomly 
-		generated test level, and my entire <a href = "y3Diss.html">year 3 dissertation project</a> stands at around just under 6mb. As an already fairly full featured engine, this is 
-		extremely encouraging for use on older systems. Especially factoring physical distribution of cartridges if any game I make ever gets that far, 
-		particularly given that this is without any of the kinds of reduction that an engine like Unity calls for when reducing file sizes. Most importantly, as I 
-		mentioned previously, this actually works with my <a href = "y3Diss.html">year 3 dissertation</a>. While large distances in A* don’t compute so quickly, the actual level generation 
-		end of it works as well as when I tested it previously, and with some improvements to the A* algorithm, it should be able to run at launch without vastly 
-		long load times if I want to keep using the random generation aspect.</li>
-		<img src = "./ShuttleEngine/5.PNG" class = "fig" alt = "Screenshot of console output for loading"> <figcaption>Load times in milliseconds (loaded in approx 56 seconds)</figcaption>
-		<br>
-		<li>
-		Interestingly, in this example which uses my <a href = "y3Diss.html">year 3 project and dissertation</a>, the actual load in for the structure generator is 9 milliseconds.
+		<li>With the most recent implementation of any sort of game on this project, with my <a href = "y4Diss.html"> Year 4 dissertation </a>, my PC was able to run 
+		the engine at around 1000fps at the best of times, with more entities lowering the framerate gradually. This project was using an emotion based AI, so the results
+		were very encouraging. Now that I've begun adding some basic optimisations to the engine as well, the performance should increase, however, I'll have to test this on 
+		my next project once I have a test level, as changing what gets serialised and deserialised has broken the previous level for this iteration of the project. I have been
+		able to simulate the conditions of my additions before running them however, and the resulting code base should be much easier to work with after, and the framerate shouldn't
+		have so many problems when adding in more and more entities. 
 		</li>
+		<iframe class = "fig" width="960" height="540" src="https://www.youtube.com/embed/USJGCQLg69w" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Video example of a high quantity of enemies in shuttle engine"></iframe>
+		<figcaption>24 simulated enemies with emotions (from the <a href = "y4Diss.html"> Year 4 Dissertation </a>)</figcaption>
+		
+		
 	</ul>
 	<li><h2 id = "success">How successful has it been?</h2></li>
 	<ul>
-		<li>While the engine hasn’t been used for any full games yet, every iteration so far has worked, and I’ve been able to keep it fairly modular and well 
+		<li>While the engine hasn’t been used for any commercially viable games yet, every iteration so far has worked, and I’ve been able to keep it fairly modular and well 
 		managed, adding a new feature in at each stage. Only a few changes have been needed with older features to get the newer ones to work, for example, the 
-		serialiser has required that all lists of lists are dealt with, which was a very easy fix, if slightly unorthodox. It also runs well on machines I’ve tested 
+		serialiser required that all lists of lists are dealt with, which was a very easy fix, if slightly unorthodox. It also runs well on machines I’ve tested 
 		it on, with friends on lower spec laptops reporting framerates of around 40 for very large maps with objects which span extremely large spaces. Additionally
-		, since the last test where I handed it out to people with low spec machines, I’ve added a few fixes for these larger objects, which should noticeably 
-		improve the framerate for the next test, and has dramatically reduced the workload. Also, at a certain level, these are stress tests. A game at release 
+		, since the last test where I handed it out to people with low spec machines, I’ve added a few fixes for these larger objects, which noticeably 
+		improved the framerate, and has dramatically reduced the workload. Also, at a certain level, these are stress tests. A game at release 
 		would be better compartmentalised to make better use of the engine’s capabilities.</li>
 		<img width = "960" height = "auto"src = "./ShuttleEngine/performancehigh.PNG" class = "fig" alt = "Screenshot of a high intensity scene in Shuttle Engine's demo game with performance metrics"> 
 		<figcaption>High intensity scene (159fps, 136 99%fps)</figcaption>
